@@ -1,8 +1,19 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{titling}
+% \usepackage{mathptmx} % Times New Roman font
+% Da decidere meglio il font questo non mi convince
 
-\title{RASD}
-\author{Argentini E. Battaglia S. Pantarotto A. Rosiglioni D.}
+
+
+\pretitle{\begin{center}\includegraphics[width=7cm]{logo.png}\\[1em]\LARGE\bfseries}
+\title{\Huge\bfseries RASD}
+\author{\Large Argentini E. Battaglia S. Pantarotto A. Rosiglioni D.}
+
+
+
+
 \begin{document}
 \maketitle
 \clearpage
@@ -108,14 +119,14 @@ WP18 & A student wants to share an announcement found on the forum \\
 
 \subsection{Revision History}
 \begin{itemize}
-    \item Version 1.0 - \date{\today} - Initial release of the document.
+    \item Version 1.0 - May 4, 2025 - Initial release of the document.
 \end{itemize}
 
 
 \subsection{Document Structure}
 % 
 % ------------------------------------------------------------
-% DA RISCRIVERE ALLA FINE IN BASE A COSA SI è FATTO ALLA FINE
+% TODO: DA RISCRIVERE ALLA FINE IN BASE A COSA SI è FATTO ALLA FINE
 % ------------------------------------------------------------
 % 
 
@@ -128,5 +139,24 @@ This document is structured into 6 sections, each containing subsections that pr
     \item \textbf{References}: This section lists any references used in the document.
 \end{itemize}  
 
+
+
+\clearpage
+\section{Overall Description}
+\subsection{Product Perspective}
+\subsubsection{Scenarios}
+
+\textbf{Scenario 1: An user creates an account and manages his own deadlines}\\
+Elir, a first-year Computer Science student, creates an account on StudentHub using his university email. After verification, he adds three academic deadlines to the Calendar: a Programming assignment, a Mathematics exam, and a group project meeting. He marks the group project as "shareable" for future teammates. Marco also adds a private reminder to call home on the weekend. Later, when his Programming assignment deadline is extended, Marco easily updates it in the system.
+\\ \\
+\textbf{Scenario 2: An user creates an announcement on the forum}\\
+Davide T., an Economics student, searches StudentHub's Forum for a specific Econometrics textbook. Not finding it, he creates an announcement requesting "Advanced Econometrics by Greene - 7th Edition" with his budget. Two days later, Sofia comments on his post offering to sell her copy. They arrange the exchange through direct messaging and meet at the university library. Paolo then marks his announcement as "Resolved" with a thank-you note.
+\\ \\
+\textbf{Scenario 3: An user creates a study group and shares notes}\\
+Pantarotto A., a Biology student, uploads her Cell Structure notes to StudentHub's "Study Resources" section with relevant tags. She then creates a "Biology Midterm Prep" study group, making it discoverable to other Biology students. Elena invites five classmates, three of whom accept immediately. Through the group chat, she shares her notes and the team plans their study sessions for the upcoming midterm.
+
+
+\subsection{Domain Model}
+TODO: to be done
 
 \end{document}
