@@ -146,19 +146,14 @@ WP25 & A student wants to customize his profile \\
 
 
 \subsection{Document Structure}
-% 
-% ------------------------------------------------------------
-% TODO: DA RISCRIVERE ALLA FINE IN BASE A COSA SI è FATTO ALLA FINE
-% ------------------------------------------------------------
-% 
 
 This document is structured into 6 sections, each containing subsections that provide detailed information about the system. The sections are as follows:
 \begin{itemize}
-    \item \textbf{Introduction}: This section provides an overview of the system, its purpose, and goals.
-    \item \textbf{Overall Description}: This section describes the system's context, stakeholders, and shared phenomena.    
-    \item \textbf{Specific Requirements}: This section outlines the specific requirements for the system.
-    \item \textbf{Effort Spent}: This section provides a summary of the hours worked on the project.
-    \item \textbf{References}: This section lists any references used in the document.
+    \item \textbf{Introduction}: This section provides an overview of the purpose, scope, and goals of the system. It also includes a description of the world phenomena and shared phenomena that the system will address.
+    \item \textbf{Overall Description}: This section describes the product perspective, including scenarios and a domain model. It also provides a high-level overview of the system's functionality and user characteristics.   
+    \item \textbf{Specific Requirements}: This section details the external interface requirements, functional requirements, performance requirements, and security requirements of the system.
+    \item \textbf{Effort Spent}: This section provides a summary of the effort spent by each team member on the project, including time spent on various tasks.
+    \item \textbf{References}: This section lists all the references used in the document, including general references, websites, and tools.
 \end{itemize}  
 
 
@@ -168,7 +163,8 @@ This document is structured into 6 sections, each containing subsections that pr
 \subsection{Product Perspective}
 \subsubsection{Scenarios}
 
-\textbf{Scenario 1: An user creates an account and manages his own deadlines}\\
+\textbf{Scenario 1: An user creates an account and manages his own deadlines}
+\\
 Elir, a first-year Computer Science student, creates an account on StudentHub using his university email. After verification, he adds three academic deadlines to the Calendar: a Programming assignment, a Mathematics exam, and a group project meeting. He marks the group project as "shareable" for future teammates. Elir also adds a private reminder to call home on the weekend. Later, when his Programming assignment deadline is extended, Elir easily updates it in the system.
 \\ \\
 \textbf{Scenario 2: An user creates an announcement on the forum}\\
@@ -424,7 +420,7 @@ FR7.7 & The system shall allow users to disable specific types of notifications 
 \hline
 \end{tabular}
 \caption{Notification Requirements}
-\label{tab}
+\label{tab: notification_management}
 \end{table}
 \clearpage
 
@@ -483,7 +479,7 @@ PR1.5 & The system shall deliver notifications in real-time (within 5 seconds of
     \hline
     \end{tabular}
     \caption{Reliability Requirements}
-    \label{tab}
+    \label{tab: reliability}
 \end{table}
 
 \subsubsection{Scalability}
@@ -500,7 +496,7 @@ PR4.4 & The system shall implement database sharding to manage data growth \\
 \hline
 \end{tabular}
 \caption{Scalability Requirements}
-\label{tab}
+\label{tab: scalability}
 \end{table}
 
 \subsubsection{Security}
@@ -540,6 +536,7 @@ PR4.4 & The system shall implement database sharding to manage data growth \\
     Reasoning & 3 \\
     Writing and Fixing & 3 \\
     Graphic Adjustments & 0 \\
+    References & 0\\
     \hline
     \textbf{Total} & \textbf{12:30} \\
     \hline
@@ -558,8 +555,9 @@ Specific Requirements &  2\\
 Reasoning &  3\\
 Writing and Fixing &  1\\
 Graphic Adjustments &  2\\
+References & 1\\
 \hline
-\textbf{Total} & \textbf{11:30} \\
+\textbf{Total} & \textbf{12:30} \\
 \hline
 \end{tabular}
 \end{center}
@@ -576,6 +574,7 @@ Specific Requirements &  2\\
 Reasoning &  3 \\
 Writing and Fixing &  3\\
 Graphic Adjustments &  1\\
+References & 0\\
 \hline
 \textbf{Total} & \textbf{9} \\
 \hline
@@ -594,6 +593,7 @@ Specific Requirements &  1\\
 Reasoning &  2\\
 Writing and Fixing &  1\\
 Graphic Adjustments &  4\\
+References & 0\\
 \hline
 \textbf{Total} & \textbf{8} \\
 \hline
