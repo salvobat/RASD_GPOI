@@ -6,6 +6,7 @@
 % Da decidere meglio il font questo non mi convince
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
 
 
 \pretitle{\begin{center}\includegraphics[width=7cm]{logo.png}\\[1em]\LARGE\bfseries}
@@ -36,7 +37,7 @@ The purpose of StudentHub is to provide a platform by students for students. Its
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|p{10cm}|}
-    \hline
+    % \hline
     \textbf{ID} & \textbf{Description} \\
     \hline
     G1 & Allow users to create, delete, log in to and log out from an account \\
@@ -200,6 +201,37 @@ This structure supports all of the identified goals of the RASD, including accou
 
 % INSERT HERE ALL OTHER POINT 2 SUBSECTIONS
 
+\clearpage
+\subsection{Product functions}
+This section describes the main functions of the system, focusing on the actions that users can perform and the interactions between them and the system.
+\subsubsection{Student Function}
+\begin{itemize}
+    \item \textbf{Create an account}: a student provides the system his/her full name and valid institutional email, the student chooses a password and confirms it. The system sends a confirmation of entry email to validate. When confirmed, the account is created.
+    \item \textbf{Delete an account}: the student enters his/her profile settings and clicks on the delete account button, the system displays a label where the student has to confirm the password. If the password is correct the account is deleted.
+    \item \textbf{Log in}: the student enters his email and password. If the data are correct, he/she is logged in and accesses the global forum; otherwise, an error is displayed.
+    \item \textbf{Log out}: The student clicks on the logout button on the screen, the system asks for confirmation, and if "yes" is clicked, the student gets logged out.
+    \item \textbf{Create a deadline}: the student clicks on the add deadline button on the calendar page, and the system displays a modal for the deadline name and description. The student enters the requested data and clicks "Publish".
+    \item \textbf{Move a deadline}: the student clicks and drags with the mouse the deadline he/she wants to move and drops it on the proper date.
+    \item \textbf{Publish some notes/an announcement}: the student on the proper page clicks on the new button and inserts his data, the student uploads eventual attachments. The student then clicks on publish.
+    \item \textbf{Edit a deadline/notes/an announcement}:  the student selects the item he/she wants to edit and clicks on the edit button. The student edits what he/she needs and confirms the new data by clicking on "Publish".
+    \item \textbf{Delete a deadline/notes/an announcement}: the student selects the item he/she wants to delete and clicks on the delete button. A confirmation modal appears; the student clicks on confirm.
+    \item \textbf{Send chat message on a study group}: The student goes to the study group page, types the message in the message box and then clicks send.
+    \item \textbf{Add a comment to an announcement}: The student enters the comment in the comment box below the announcement and then clicks send.
+    \item \textbf{Get the share link of an announcement}: The student clicks on the share icon on the announcement he/she wants to share and the link is copied.
+    \item \textbf{Search a topic on the forum}: The student enters the topic in the search bar and clicks the search icon. The list of documents related to the searched topic will be displayed.
+\end{itemize}
+
+
+
+\subsection{User Characteristics}
+This section describes the general characteristics of the intended groups of users.
+\subsubsection{Student characteristics}
+The students who will use this platform are usually enrolled at a university, so they are most likely to be between 18 and 30 years old and certainly have basic digital skills. A device with a stable connection is required to access the platform, as it all works by communicating with others. The platform provides translation in the most common languages, so users are only expected to have basic reading skills in one of the supported languages and do not require advanced technical knowledge beyond standard web and app usage. The platform should use a user interface with a high-contrast palette to improve the experience of visually impaired users and be compatible with screen readers (for example, using alternative text for images), ensuring accessibility for users with various disabilities. In general, it should be accessible to all types of users. Students are expected to access the platform regularly, either daily or weekly, to manage deadlines, share resources, and interact with study groups.
+
+
+
+
+
 
 
 
@@ -215,10 +247,281 @@ This structure supports all of the identified goals of the RASD, including accou
 \clearpage
 \section{Specific Requirements}
 
+\subsection{External Interface Requirements}
+
+\subsubsection{User Interfaces}
+The StudentHub platform will provide the following user interfaces:
+
+\begin{itemize}
+    \item \textbf{Landing Page}: Displays general information about the platform and provides access to login and registration.
+    \item \textbf{Dashboard}: Displays a summary of the user's calendar, deadlines, recent notes, and notifications.
+    \item \textbf{Calendar Interface}: Shows shared and private deadlines in a calendar view with daily, weekly, and monthly views.
+    \item \textbf{Study Notes Repository}: Interface for uploading, searching, and managing study notes.
+    \item \textbf{Study Group Interface}: For creating, managing, and participating in study groups.
+    \item \textbf{Forum Interface}: For creating, viewing, and interacting with announcements.
+    \item \textbf{Marketplace Interface}: For listing and searching books and tutoring services.
+    \item \textbf{User Profile Interface}: For managing personal information and preferences.
+\end{itemize}
+
+All interfaces must be responsive and accessible on desktop and mobile devices.
+
+\subsubsection{Hardware Interfaces}
+The system does not require specific hardware interfaces beyond standard computing devices with internet connectivity:
+
+\begin{itemize}
+    \item Desktop computers
+    \item Laptop computers
+    \item Tablets
+    \item Smartphones
+\end{itemize}
+
+\subsubsection{Software Interfaces}
+The system will interface with the following software systems:
+
+\begin{itemize}
+    \item \textbf{Email Service API}: For user verification and notifications
+    \item \textbf{Database Management System}: For storing user data, notes, calendar events, and forum content
+    \item \textbf{File Storage System}: For storing uploaded study materials
+    \item \textbf{Authentication System}: For user login and security
+\end{itemize}
+
+\subsubsection{Communication Interfaces}
+The system will utilize the following communication protocols:
+
+\begin{itemize}
+    \item \textbf{HTTPS}: For secure data transmission between client and server
+    \item \textbf{WebSocket}: For real-time notifications and messaging within study groups
+    \item \textbf{SMTP}: For sending emails to users
+\end{itemize}
+
+\clearpage
+\subsection{Functional Requirements}
+\subsubsection{User Management}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & \textbf{Description} \\
+    \hline
+    FR1.1 & The system shall allow users to create an account using their university email address \\
+    FR1.2 & The system shall verify user email addresses through a confirmation link \\
+    FR1.3 & The system shall allow users to log in to their account using their credentials \\
+    FR1.4 & The system shall allow users to log out from their account \\
+    FR1.5 & The system shall allow users to delete their account \\
+    FR1.6 & The system shall allow users to reset their password through email verification \\
+    FR1.7 & The system shall allow users to customize their profile information including: name, profile picture, field of study, and brief bio \\
+    \hline
+    \end{tabular}
+    \caption{User Management Requirements}
+    \label{tab: user_management}
+\end{table}
 
 
 
+\subsubsection{Calendar Management}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+FR2.1 & The system shall provide a calendar interface with daily, weekly, and monthly views \\
+FR2.2 & The system shall allow users to create new deadlines with title, description, date, time, and category \\
+FR2.3 & The system shall allow users to categorize deadlines (e.g., exam, assignment, project) \\
+FR2.4 & The system shall allow users to set deadlines as private (visible only to themselves) or shared (visible to specified users or groups) \\
+FR2.5 & The system shall allow users to edit deadlines they have created, including changing all attributes \\
+FR2.6 & The system shall allow users to move deadlines to different dates/times through drag-and-drop or date selection \\
+FR2.7 & The system shall allow users to delete deadlines they have created \\
+FR2.8 & The system shall allow users to filter deadlines by category, date range, or visibility (private/shared) \\
+\hline
+\end{tabular}
+\caption{Calendar Management Requirements}
+\label{tab :calendar_management}
+\end{table}
 
+\clearpage
+\subsubsection{Study Notes Management}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+FR3.1 & The system shall allow users to upload study notes in various formats (PDF, DOC, TXT) with a maximum file size of 20MB \\
+FR3.2 & The system shall allow users to categorize notes by subject, course, and academic term \\
+FR3.3 & The system shall allow users to add tags to their notes for better searchability \\
+FR3.4 & The system shall allow users to share notes with specific users, study groups, or make them publicly available \\
+FR3.5 & The system shall allow users to edit metadata of their uploaded notes (title, description, tags) \\
+FR3.6 & The system shall allow users to update their notes by uploading a new version \\
+FR3.7 & The system shall allow users to delete their uploaded notes \\
+FR3.8 & The system shall provide a search function for finding notes by subject, tag, or content \\
+\hline
+\end{tabular}
+\caption{Study Notes Management Requirements}
+\label{tab: study_notes_management}
+\end{table}
+
+\subsubsection{Study Group Management}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+FR4.1 & The system shall allow users to create study groups with a name, description, and subject area \\
+FR4.2 & The system shall allow users to set study groups as public (discoverable by all users) or private (accessible by invitation only) \\
+FR4.3 & The system shall allow users to invite other users to join their study groups \\
+FR4.4 & The system shall allow users to accept or decline study group invitations \\
+FR4.5 & The system shall provide a messaging system within study groups \\
+FR4.6 & The system shall allow users to share notes and resources directly within study groups \\
+FR4.7 & The system shall allow study group creators to manage group members (add/remove) \\
+FR4.8 & The system shall allow study group creators to delete their groups \\
+FR4.9 & The system shall allow users to leave study groups they have joined \\
+\hline
+\end{tabular}
+\caption{Study Group Management Requirements}
+\label{tab: study_group_management}
+\end{table}
+
+\clearpage
+\subsubsection{Forum Management}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+FR5.1 & The system shall provide a forum where users can create announcements with title, content, and category \\
+FR5.2 & The system shall allow users to categorize announcements (e.g., book exchange, tutoring, events) \\
+FR5.3 & The system shall allow users to edit their own announcements \\
+FR5.4 & The system shall allow users to delete their own announcements \\
+FR5.5 & The system shall allow users to comment on announcements \\
+FR5.6 & The system shall allow users to edit and delete their own comments \\
+FR5.7 & The system shall allow users to mark announcements as resolved when applicable \\
+FR5.8 & The system shall allow users to share announcements via email or social media \\
+FR5.9 & The system shall provide a search function for finding announcements by category, keywords, or date \\
+\hline
+\end{tabular}
+\caption{Forum Management Requirements}
+\label{tab: forum_management}
+\end{table}
+
+
+\subsubsection{Notification System}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+FR7.1 & The system shall notify users of upcoming deadlines 24 hours before the deadline \\
+FR7.2 & The system shall notify users of new study group invitations \\
+FR7.3 & The system shall notify users of new messages in their study groups \\
+FR7.4 & The system shall notify users of comments on their forum announcements \\
+FR7.5 & The system shall notify users of responses to their marketplace listings \\
+FR7.6 & The system shall allow users to customize notification preferences (email, in-app, or both) \\
+FR7.7 & The system shall allow users to disable specific types of notifications \\
+\hline
+\end{tabular}
+\caption{Notification Requirements}
+\label{tab}
+\end{table}
+\clearpage
+
+\subsection{Performance Requirements}
+
+\subsubsection{Response Time}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+PR1.1 & The system shall load web pages within 3 seconds under normal load conditions \\
+PR1.2 & The system shall process form submissions within 2 seconds \\
+PR1.3 & The system shall display search results within 3 seconds \\
+PR1.4 & The system shall upload files of up to 20MB within 10 seconds with standard internet connection \\
+PR1.5 & The system shall deliver notifications in real-time (within 5 seconds of the triggering event) \\
+\hline
+\end{tabular}
+\caption{Response Time Requirements}
+\label{tab: response_time}
+\end{table}
+
+
+\subsubsection{Capacity}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & \textbf{Description} \\
+    \hline
+    PR2.1 & The system shall support at least 1000 concurrent users \\
+    PR2.2 & The system shall support up to 100,000 registered users \\
+    PR2.3 & The system shall support up to 10,000 study groups \\
+    PR2.4 & The system shall support up to 500,000 documents in the notes repository \\
+    PR2.5 & The system shall support up to 100,000 forum announcements \\
+    \hline
+    \end{tabular}
+    \caption{Capacity Requirements}
+    \label{tab: Capacity}
+\end{table}
+
+\subsubsection{Reliability}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & \textbf{Description} \\
+    \hline
+    PR3.1 & The system shall maintain 99.5$\%$ uptime in a year\\
+    PR3.2 & The system shall recover from failures within 5 minutes \\
+    PR3.3 & The system database shall be backed up daily with a retention period of 30 days \\
+    PR3.4 & The system shall maintain data integrity across all operations \\
+    PR3.5 & The system shall implement appropriate error handling to prevent crashes \\
+    \hline
+    \end{tabular}
+    \caption{Reliability Requirements}
+    \label{tab}
+\end{table}
+
+\subsubsection{Scalability}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+PR4.1 & The system shall be designed to scale horizontally to accommodate increased user load \\
+PR4.2 & The system shall maintain performance levels when scaling up to 200$\%$ of the inital capacity\\
+PR4.3 & The system shall implement load balancing to distribute traffic efficiently \\
+PR4.4 & The system shall implement database sharding to manage data growth \\
+\hline
+\end{tabular}
+\caption{Scalability Requirements}
+\label{tab}
+\end{table}
+
+\subsubsection{Security}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{ID} & \textbf{Description} \\
+    \hline
+    PR5.1 & The system shall encrypt all user passwords using industry-standard hashing algorithms \\
+    PR5.2 & The system shall enforce secure password policies (minimum 8 characters, including uppercase, lowercase, numbers, and special characters) \\
+    PR5.3 & The system shall implement HTTPS for all data transmissions \\
+    PR5.4 & The system shall implement protection against common web vulnerabilities (XSS, CSRF, SQL injection) \\
+    PR5.5 & The system shall log all login attempts and security-related events \\
+    PR5.6 & The system shall automatically log out inactive users after 30 minutes \\
+    PR5.7 & The system shall implement rate limiting to prevent brute force attacks \\
+    \hline
+    \end{tabular}
+    \caption{Security Requirements}
+    \label{tab}
+\end{table}
 
 
 \clearpage
@@ -296,6 +599,57 @@ Graphic Adjustments &  4\\
 \hline
 \end{tabular}
 \end{center}
+
+
+
+\clearpage
+\section{References}
+
+\subsection{General References}
+\begin{itemize}
+    \item \textbf{Assignment instructions}: Teacher's shared project assignment.
+    \subitem "Esercitazione di Laboratorio RASD"
+
+    \item \textbf{IEEE. (2023)}. IEEE Recommended Practice for Software Requirements Specifications (IEEE 830-1998). Institute of Electrical and Electronics Engineers.
+    
+    \item \textbf{Latex documentation}. (2025). The \LaTeX Project. 
+    \subitem Retrieved from \url{https://www.latex-project.org/help/documentation/}
+    
+    \item \textbf{Example document}: Teacher Lukash Matteo's "Students \& Companies - Requirements Analysis and Specification Document" document.
+    \subitem Copyright \copyright 2024, Lukasch Matteo – All rights reserved
+\end{itemize}
+
+\subsection{Websites}
+\begin{itemize}
+    
+    \item \url{https://www.latex-project.org/help/documentation/}
+    
+    \item \url{https://stackoverflow.com/questions}
+
+    \item \url{https://github.com/salvobat/RASD_GPOI}
+    
+    \item \url{https://www.overleaf.com/learn}
+    
+    \item \url{https://www.mermaidchart.com/}
+
+    \item \url{https://chatgpt.com/}
+
+\end{itemize}
+
+\subsection{Tools}
+\begin{itemize}
+    \item \textbf{Visual Studio Code} - Code editor used for writing the document in LaTeX.
+    \item \textbf{Overleaf} - Online LaTeX editor used for collaborative writing and editing of the document.
+    \item \textbf{Mermaidchart} - Online tool used for creating the domain model diagram.
+    \item \textbf{LaTeX Workshop} - VSCode extension used for LaTeX editing and compilation.
+    \item \textbf{GitHub} - Version control system used for collaborative writing and editing of the document.
+    \item \textbf{Live Share} - VSCode extension used for real-time collaboration on the document.
+
+
+
+
+\end{itemize}
+
 
 
 
