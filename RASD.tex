@@ -5,14 +5,22 @@
 % \usepackage{mathptmx} % Times New Roman font
 % Da decidere meglio il font questo non mi convince
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
-
+\usepackage{fancyhdr}
 
 
 \pretitle{\begin{center}\includegraphics[width=7cm]{logo.png}\\[1em]\LARGE\bfseries}
-\title{\Huge\bfseries RASD}
+\title{\Huge\bfseries StudentHub \\ [0.2em]\large Requirements Analysis and System Design}
 \author{\Large Argentini E. Battaglia S. Pantarotto A. Rosiglioni D.}
 
 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{RASD - StudentHub}}
+\fancyhead[R]{Argentini - Battaglia - Pantarotto - Rosiglioni}
+\fancyfoot[C]{\textbf{\thepage}} 
+\fancyfoot[L]{Copyright \textcopyright   2025 - All rights reserved}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 
 \begin{document}
@@ -148,7 +156,7 @@ This document is structured into 6 sections, each containing subsections that pr
     \item \textbf{Introduction}: This section provides an overview of the system, its purpose, and goals.
     \item \textbf{Overall Description}: This section describes the system's context, stakeholders, and shared phenomena.    
     \item \textbf{Specific Requirements}: This section outlines the specific requirements for the system.
-    \item \textbf{Hours Worked}: This section provides a summary of the hours worked on the project.
+    \item \textbf{Effort Spent}: This section provides a summary of the hours worked on the project.
     \item \textbf{References}: This section lists any references used in the document.
 \end{itemize}  
 
