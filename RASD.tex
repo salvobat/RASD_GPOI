@@ -225,7 +225,34 @@ This section describes the general characteristics of the intended groups of use
 The students who will use this platform are usually enrolled at a university, so they are most likely to be between 18 and 30 years old and certainly have basic digital skills. A device with a stable connection is required to access the platform, as it all works by communicating with others. The platform provides translation in the most common languages, so users are only expected to have basic reading skills in one of the supported languages and do not require advanced technical knowledge beyond standard web and app usage. The platform should use a user interface with a high-contrast palette to improve the experience of visually impaired users and be compatible with screen readers (for example, using alternative text for images), ensuring accessibility for users with various disabilities. In general, it should be accessible to all types of users. Students are expected to access the platform regularly, either daily or weekly, to manage deadlines, share resources, and interact with study groups.
 
 
-
+\subsection{Assumptions, dependencies and constraints}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|p{15cm}|}
+\hline
+\textbf{ID} & \textbf{Description} \\
+\hline
+A1 & The platform is accessible via web browser on any device \\
+A2 & Students have valid institutional email addresses to register on the platform \\
+A3 & Students should use their correct personal data and not perform any kind of fraudulent or deceptive activity within the platform  \\
+A4 & Each student has access only to the study groups he/she is a part of \\
+A5 & Students are enrolled at recognized Universities \\
+A6 & An institutional email allows the creation of at most one account \\
+A7 & Students are responsible of all the data they submit to the platform \\
+A8 & The system validates inputs (e.g. password criteria, and file size limits) before processing actions. \\
+A9 & The system maintains data integrity and consistency across all operations (e.g. when deleting an STU account, associated data are also removed). \\
+A10 & The platform relies on users having a stable internet connection during use \\
+A11 & Students are expected to keep their login credentials secure and confidential \\
+A12 & Forum posts, announcements, and notes shared by users should respect copyright and legal regulations \\
+A13 & The platform will only process and store data compliant with data protection regulations (e.g., GDPR) \\
+A14 & Notifications depend on users enabling them and providing correct contact information \\
+A15 & The system time zone defaults to the student’s selected or device time zone for deadlines and schedules \\
+A16 & Translation services are provided by an integrated external API (e.g., Google Translate API, DeepL API) \\
+\hline
+\end{tabular}
+\caption{Domain assumptions}
+\label{tab:esempio}
+\end{table}
 
 
 
