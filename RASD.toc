@@ -11,9 +11,9 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Scenarios}{6}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Domain Model}{7}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Product functions}{8}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Student Function}{8}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}User Characteristics}{8}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Student characteristics}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Student Functions}{8}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}User Characteristics}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Student characteristics}{9}{subsubsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.4}Assumptions, dependencies and constraints}{9}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Specific Requirements}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}External Interface Requirements}{10}{subsection.3.1}%
@@ -32,7 +32,7 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Response Time}{14}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Capacity}{14}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Reliability}{14}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Scalability}{14}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4}Scalability}{15}{subsubsection.3.3.4}%
 \contentsline {subsubsection}{\numberline {3.3.5}Security}{15}{subsubsection.3.3.5}%
 \contentsline {section}{\numberline {4}Effort spent}{16}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Argentini Elir}{16}{subsection.4.1}%

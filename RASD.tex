@@ -2,11 +2,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{titling}
-% \usepackage{mathptmx} % Times New Roman font
-% Da decidere meglio il font questo non mi convince
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
 \usepackage{fancyhdr}
-\usepackage{hyperref}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -41,7 +40,7 @@
 
 \section{Introduction}
 \subsection{Purpose}
-The purpose of StudentHub is to provide a platform by students for students. Its objective is to streamline the management of student life. The platform will allow students to manage their tasks and organise their study sessions. The platform will also provide a space for students to connect with each other, share resources and collaborate on projects. The platform will also offer students a network forum where they can make announcements to find used books and private lessons, as well as share information about school events.
+The purpose of StudentHub is to provide a platform designed by students, for students. Its objective is to streamline the management of student life. The platform will allow students to manage their tasks and organise their study sessions. The platform will also provide a space for students to connect with each other, share resources and collaborate on projects. The platform will also offer students a network forum where they can post announcements to find used books and private lessons, as well as share information about school events.
 \subsubsection{Goals}
 \begin{table}[h!]
 \centering
@@ -49,7 +48,7 @@ The purpose of StudentHub is to provide a platform by students for students. Its
     % \hline
     \textbf{ID} & \textbf{Description} \\
     \hline
-    G1 & Allow users to create, delete, log in to and log out from an account \\
+    G1 & Allow users to create, delete, log in to and log out of their accounts \\
     G2 & Enable users to create, edit, move, and delete deadlines on a shared calendar \\
     G3 & Provide functionality for users to create, edit, and delete private deadlines visible only to themselves \\
     G4 & Allow users to upload, share, edit, and delete study notes on various subjects \\
@@ -61,7 +60,7 @@ The purpose of StudentHub is to provide a platform by students for students. Its
     G10 & Allow users to search for specific topics, notes, or announcements within the platform \\
     G11 & Provide a marketplace functionality for exchanging used academic books \\
     G12 & Enable users to offer and search for private tutoring lessons \\
-    G13 & Allow users to create and share information about upcoming school events \\
+    G13 & Allow users to create and share announcements about upcoming school events \\
     G14 & Provide notification functionality for deadline reminders and forum activity \\
     G15 & Enable users to customize their profile and privacy settings \\
     \hline
@@ -103,6 +102,8 @@ WP22 & A student wants to buy an academic book \\
 WP23 & A student wants to offer private tutoring lessons \\
 WP24 & A student wants to purchase a private tutoring lessons \\
 WP25 & A student wants to customize his profile \\
+WP26 & A student wants to log in to their account \\
+WP27 & A student wants to log out of their account \\
 \hline
 \end{tabular}
 \caption{World Phenomena}
@@ -142,6 +143,8 @@ WP25 & A student wants to customize his profile \\
     SP23 & The student offers private tutoring lessons in the system \\
     SP24 & The student books a private tutoring lesson using the system \\
     SP25 & The student customizes the profile in the system \\
+    SP26 & The student logs in to their account \\
+    SP27 & A student logs out of their account \\
     \hline
     \end{tabular}
     \caption{Shared Phenomena}
@@ -172,14 +175,14 @@ This document is structured into 6 sections, each containing subsections that pr
 \subsection{Product Perspective}
 \subsubsection{Scenarios}
 
-\textbf{Scenario 1: An user creates an account and manages his own deadlines}
+\textbf{Scenario 1: A user creates an account and manages his own deadlines}
 \\
 Elir, a first-year Computer Science student, creates an account on StudentHub using his university email. After verification, he adds three academic deadlines to the Calendar: a Programming assignment, a Mathematics exam, and a group project meeting. He marks the group project as "shareable" for future teammates. Elir also adds a private reminder to call home on the weekend. Later, when his Programming assignment deadline is extended, Elir easily updates it in the system.
 \\ \\
-\textbf{Scenario 2: An user creates an announcement on the forum}\\
+\textbf{Scenario 2: A user creates an announcement on the forum}\\
 Davide T., an Economics student, searches StudentHub's Forum for a specific Econometrics textbook. Not finding it, he creates an announcement requesting "Advanced Econometrics by Rosiglioni D. - 7th Edition" with his budget. Two days later, Salvo comments on his post offering to sell his copy. They arrange the exchange through direct messaging and meet at the university library. Trevisan then marks his announcement as "Resolved" with a thank-you note.
 \\ \\
-\textbf{Scenario 3: An user creates a study group and shares notes}\\
+\textbf{Scenario 3: A user creates a study group and shares notes}\\
 Pantarotto A., a Biology student, uploads his Cell Structure notes to StudentHub's "Study Resources" section with relevant tags. He then creates a "Biology Midterm Prep" study group, making it discoverable to other Biology students. Alessio invites five classmates, three of whom accept immediately. Through the group chat, he shares his notes and the team plans their study sessions for the upcoming midterm.
 
 \clearpage
@@ -209,12 +212,12 @@ This structure supports all of the identified goals of the RASD, including accou
 \clearpage
 \subsection{Product functions}
 This section describes the main functions of the system, focusing on the actions that users can perform and the interactions between them and the system.
-\subsubsection{Student Function}
+\subsubsection{Student Functions}
 \begin{itemize}
     \item \textbf{Create an account}: a student provides the system his/her full name and valid institutional email, the student chooses a password and confirms it. The system sends a confirmation of entry email to validate. When confirmed, the account is created.
     \item \textbf{Delete an account}: the student enters his/her profile settings and clicks on the delete account button, the system displays a label where the student has to confirm the password. If the password is correct the account is deleted.
     \item \textbf{Log in}: the student enters his email and password. If the data are correct, he/she is logged in and accesses the global forum; otherwise, an error is displayed.
-    \item \textbf{Log out}: The student clicks on the logout button on the screen, the system asks for confirmation, and if "yes" is clicked, the student gets logged out.
+    \item \textbf{Log out}: The student clicks on the logout button on the screen, the system asks for confirmation, and if "yes" is clicked, the student is logged out.
     \item \textbf{Create a deadline}: the student clicks on the add deadline button on the calendar page, and the system displays a modal for the deadline name and description. The student enters the requested data and clicks "Publish".
     \item \textbf{Move a deadline}: the student clicks and drags with the mouse the deadline he/she wants to move and drops it on the proper date.
     \item \textbf{Publish some notes/an announcement}: the student on the proper page clicks on the new button and inserts his data, the student uploads eventual attachments. The student then clicks on publish.
@@ -227,7 +230,7 @@ This section describes the main functions of the system, focusing on the actions
 \end{itemize}
 
 
-
+\clearpage
 \subsection{User Characteristics}
 This section describes the general characteristics of the intended groups of users.
 \subsubsection{Student characteristics}
@@ -518,6 +521,7 @@ PR1.5 & The system shall deliver notifications in real-time (within 5 seconds of
     \label{tab: reliability}
 \end{table}
 
+\clearpage
 \subsubsection{Scalability}
 \begin{table}[h!]
 \centering
@@ -680,7 +684,7 @@ References & 0\\
     \item \textbf{LaTeX Workshop} - VSCode extension used for LaTeX editing and compilation.
     \item \textbf{GitHub} - Version control system used for collaborative writing and editing of the document.
     \item \textbf{Live Share} - VSCode extension used for real-time collaboration on the document.
-    \item \textbf{ChatGPT} - AI language model used for generating text and used for a better LaTeX formatting.
+    \item \textbf{ChatGPT} - AI language model used for generating text and here used for a better LaTeX formatting.
 
 
 
